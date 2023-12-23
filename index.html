@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <script src="./jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="./stylesheet.css">
+</head>
+<body>
+    <div class="choosePayment">
+        <label for="Payment">Valor</label>
+        <input type="number" class="valor">
+
+        <br>
+        <input type="radio" name="meio_pagamento" id="pix">
+        <label for="pix">Pix</label>
+
+        <input type="radio" name="meio_pagamento" id="cartaoCredito">
+        <label for="cartaoCredito">Cartão de Crédito</label>
+        
+        <br>
+        <button class="informarDados">Informar dados</button>
+
+        <div class="pix">
+            <h2>Pix</h2>
+            <label for="cpf">CPF</label>
+            <input type="text">
+        </div>
+
+        <br>
+        <div class="cartaoCredito">
+            <h2>CARTÃO DE CRÉDITO</h2>
+            <label for="numero">Número</label>
+            <input type="number">
+            <br>
+            <label for="titular">Titular</label>
+            <input type="titular">
+            <br>
+            <label for="codSeguranca">Cód Segurança</label>
+            <input type="number">
+            <br>
+            <label for="vencimento">Vencimento</label>
+            <input type="date">
+            <br>
+            <label for="parcelas">Parcelas</label>
+            <select name="parcelas" id="">
+                <option value="1">1x</option>
+                <option value="2">2x</option>
+                <option value="3">3x</option>
+                <option value="4">4x</option>
+
+            </select>
+
+
+        </div>
+        <br>
+        <div class="finishPayment">
+            <button class="pagar">Pagar</button>
+            <label for="total">Total: R$ 0,00</label>
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
