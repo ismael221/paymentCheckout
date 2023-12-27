@@ -56,14 +56,14 @@ $(document).ready(
 )
 
 $(document).ready(
-    $(".valor").change(
+    $("#numero").change(
         function (){
-            let valor = document.querySelector(".valor").value
-            if(valor.startsWith("1234")){
+            let numero = document.querySelector("#numero").value
+            if(numero.startsWith("1234")){
                 $("#mastercard").fadeIn()
                 $("#visa").fadeOut()
                 $("span").fadeOut()
-            }else if(valor.startsWith("4321")){
+            }else if(numero.startsWith("4321")){
                 $("#visa").fadeIn()
                 $("#mastercard").fadeOut()
                 $("span").fadeOut()
@@ -74,4 +74,45 @@ $(document).ready(
             }
         }
     )
+)
+
+$(document).ready(
+    $(".informarDados").click(function(){
+        let valor = document.querySelector(".valor").value
+
+        for(var i=1;i<6;i++){
+            let total = valor/i;
+         
+            if(i === 4){
+                let juros5Pct = valor * 0.05
+                $("#parcelamento").append("<li> "+i+"x"+ " R$ "+ (juros5Pct + total).toFixed(2) +"</li>")
+            }else if(i === 5){
+                let juros10Pct = valor * 0.1
+                $("#parcelamento").append("<li> "+i+"x"+ " R$ "+ (juros10Pct + total).toFixed(2) +"</li>")
+            }
+            else{
+                $("#parcelamento").append("<li> "+i+"x"+ " R$ "+ total.toFixed(2) +"</li>")
+            }
+        }
+        
+    })
+)
+
+
+$(document).ready(
+    $("#parcelas").change(function(){
+        let valor = document.querySelector(".valor").value
+        let parcelas = document.querySelector("#parcelas").value
+        let total = valor/parcelas;
+
+        $("#total").text("R$ "+total)
+    })
+)
+
+$(document).ready(
+    $(".pagar").click(function(){
+        if(($("#numero") && $("#titular") && $("codSeguranca") && $("#date")) != null || undefined){
+            alert("Pagamento realizado com sucesso")
+        }
+    })
 )

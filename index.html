@@ -32,7 +32,7 @@
         <div class="cartaoCredito">
             <h2>CARTÃO DE CRÉDITO</h2>
             <label for="numero">Número</label>
-            <input type="number">
+            <input type="number" name="numero" id="numero">
             <span> Número de cartão invalido</span>
             <div class="imageContainer">
             <img src="./assets/mastercard.png" alt="" id="mastercard">
@@ -40,23 +40,25 @@
              </div>
             <br>
             <label for="titular">Titular</label>
-            <input type="titular">
+            <input type="titular" id="titular">
             <br>
             <label for="codSeguranca">Cód Segurança</label>
-            <input type="number">
+            <input type="number" id="codSeguranca">
             <br>
             <label for="vencimento">Vencimento</label>
-            <input type="date">
+            <input type="date" id="date">
             <br>
             <label for="parcelas">Parcelas</label>
-            <select name="parcelas" id="">
+            <select name="parcelas" id="parcelas">
                 <option value="1">1x</option>
                 <option value="2">2x</option>
                 <option value="3">3x</option>
                 <option value="4">4x</option>
-
+                <option value="5">5x</option>
             </select>
+            <ul class="parcelamento" id="parcelamento">
 
+            </ul>
 
         </div>
         <br>
